@@ -1,0 +1,15 @@
+﻿<Window x:Class="Projet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="467" Width="855">
+    <Grid>
+        <Label x:Name="label" Content="Cliquez sur un bouton" HorizontalAlignment="Left" Height="34" Margin="312,31,0,0" VerticalAlignment="Top" Width="332"/>
+        <Button x:Name="Ajout" Content="Ajouter un délit" HorizontalAlignment="Left" Margin="106,144,0,0" VerticalAlignment="Top" Width="147" Click =" button_add" Height="63"/>
+        <Button x:Name="Recherche" Content="Rechercher un délit" HorizontalAlignment="Left" Margin="550,144,0,0" VerticalAlignment="Top" Width="175" Click="button_research" Height="63"/>
+
+    </Grid>
+</Window>

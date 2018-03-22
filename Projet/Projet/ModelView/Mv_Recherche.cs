@@ -12,12 +12,20 @@ using System.Windows.Input;
 using System.Windows;
 
 namespace Projet.ModelView
-{
+{/*
     class Mv_Recherche : ICommand
     {
+        
         View_Recherche view;
         string date;
         string quartier;
+        string companyName;
+        string averageVolume;
+        string country;
+        string industry;
+        string price;
+        string priceChanging;
+        string averageVolumeChanging;
         public string setDate;
         M_GestionDeDonnees obj ;
         private bool _canExecute;
@@ -126,5 +134,5 @@ namespace Projet.ModelView
         {
             _action();
         }
-    }
+}*/
 }

@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using Projet.View;
 using Projet.ModelView;
 using System.ComponentModel;
 using System.IO;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using System.Net.Sockets;
+using MongoDB.Driver.GridFS;
+using MongoDB.Driver.Core;
+using MongoDB.Driver.Linq;
+using MongoDB.Driver.Builders;
 
 namespace Projet.Model
 {
@@ -20,7 +26,14 @@ namespace Projet.Model
         string requete = "SELECT * FROM Crime";
         public List<M_Crime> ListCrime { get { return listcrime; } }
 
-        Mv_Recherche obj = new Mv_Recherche();
+        //Mv_Recherche obj = new Mv_Recherche();
+        private string date; 
+        private string company;
+        private string country;
+        private string sector;
+        private string industry;
+        private string price;
+        private string averageVolume;
         #endregion
         public M_GestionDeDonnees(string date, string quartier)
         {
@@ -31,11 +44,36 @@ namespace Projet.Model
         {
         }
 
+        public M_GestionDeDonnees(string date, string company, string country, string sector, string industry, string price, string averageVolume)
+        {
+            this.company = company;
+            this.country = country;
+            this.sector = sector;
+            this.industry = industry;
+            this.price = price;
+            this.averageVolume = averageVolume;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public void Connect_to_mongo(string date, string company, string country, string sector,string industry,string price,string average_Volume)
+        {
 
+            var connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var server = client.GetServer();
+            var database = server.GetDatabase("stocks");
+            server.Ping();
+            MongoCollection<M_Stocks> collection = database.GetCollection<M_Stocks>("Stocks");
 
-        public void Connexion_Database(string date, string quartier)
+            var query = Query<M_Stocks>.EQ(u => u.Company, "Agilent Technologies Inc.");
+            M_Stocks StockResult = collection.FindOne(query);
+
+        }
+
+        #region
+
+        /*public void Connexion_Database(string date, string quartier)
         {
             string connectionString = "SERVER=localhost; DATABASE=NY_Crimes;UID=esilvs6;PASSWORD=esilvs6;";
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -99,5 +137,7 @@ namespace Projet.Model
 
             }
         }
+        */
+        #endregion
     }
 }

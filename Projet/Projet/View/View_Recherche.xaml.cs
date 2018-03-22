@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace Projet.View
-{
+{/*
     /// <summary>
     /// Logique d'interaction pour View_Recherche.xaml
     /// </summary>
@@ -27,7 +27,6 @@ namespace Projet.View
         {
             recherche = new Mv_Recherche();
             recherche.FenetreDeRecherche = this; 
-
             InitializeComponent();
         }
 
@@ -39,13 +38,39 @@ namespace Projet.View
             }
         }
 
+        private void button_research(object sender, RoutedEventArgs e)
+        {
+            Recherche_Delit();
+        }
+
+        private void button_add(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Recherche_Delit()
+        {
+
+            View_Recherche Recherche_crime = new View_Recherche();
+            Recherche_crime.Show();
+            // this.Hide();
+
+        }
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
             string date = DateBox.Text;
-            string quartier = comboBox.Text; 
-            recherche.MyAction(date,quartier);
+            string companyName = CompanyName.Text;
+            string averageVolume = AverageVolume.Text;
+            string country = Country.Text;
+            string industry = Industry.Text;
+            string price = Price.Text;
+            string priceChanging = comboBoxPrice.Text;
+            string averageVolumeChanging = comboBoxAverageVolume.Text;
+
+            recherche.MyAction(date, companyName, averageVolume, country, industry, price, priceChanging, averageVolumeChanging);
         }
 
-        
+
     }
+    */
 }

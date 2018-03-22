@@ -22,8 +22,12 @@ namespace Projet
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private MV_Stocks recherche = new MV_Stocks();
         public MainWindow()
         {
+            recherche = new MV_Stocks();
+            recherche.FenetreDeRecherche = this;
             InitializeComponent();
            
         }
@@ -45,5 +49,21 @@ namespace Projet
            // this.Hide();
 
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string date = DateBox.Text;
+            string companyName = CompanyName.Text;
+            string averageVolume = AverageVolume.Text;
+            string country = Country.Text;
+            string industry = Industry.Text;
+            string price = Price.Text;
+            string priceChanging = comboBoxPrice.Text;
+            string averageVolumeChanging = comboBoxAverageVolume.Text;
+            
+            recherche.MyAction(date, companyName, averageVolume,country,industry,price,priceChanging,averageVolumeChanging);
+        }
+
+        
     }
 }

@@ -7,9 +7,50 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="467" Width="855">
     <Grid>
-        <Label x:Name="label" Content="Cliquez sur un bouton" HorizontalAlignment="Left" Height="34" Margin="312,31,0,0" VerticalAlignment="Top" Width="332"/>
-        <Button x:Name="Ajout" Content="Ajouter un délit" HorizontalAlignment="Left" Margin="106,144,0,0" VerticalAlignment="Top" Width="147" Click =" button_add" Height="63"/>
-        <Button x:Name="Recherche" Content="Rechercher un délit" HorizontalAlignment="Left" Margin="550,144,0,0" VerticalAlignment="Top" Width="175" Click="button_research" Height="63"/>
+        <Label x:Name="label" Content="Veuillez remplir les arguments de votre recherche" HorizontalAlignment="Left" Margin="25,18,-102,0" VerticalAlignment="Top" Width="369"/>
+        
+        <TextBox x:Name="DateBox"   HorizontalAlignment="Left" Height="23" Margin="25,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="DateBox_TextChanged"    />
+        
+        <TextBox x:Name="CompanyName"   HorizontalAlignment="Left" Height="23" Margin="25,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.75,3.13"    />
+        
+        <ComboBox x:Name="comboBoxPrice"  HorizontalAlignment="Left" Margin="182,323,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxPrice_SelectionChanged">
+            <ComboBoxItem></ComboBoxItem>
+            <ComboBoxItem>Plus petit que</ComboBoxItem>
+            <ComboBoxItem>Egal à</ComboBoxItem>
+            <ComboBoxItem>Plus grand que</ComboBoxItem>
+
+        </ComboBox>
+        
+        <ComboBox x:Name="comboBoxAverageVolume"  HorizontalAlignment="Left" Margin="182,273,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem></ComboBoxItem>
+            <ComboBoxItem>Plus petit que</ComboBoxItem>
+            <ComboBoxItem>Egal à</ComboBoxItem>
+            <ComboBoxItem>Plus grand que</ComboBoxItem>
+
+        </ComboBox>
+        
+        <Button x:Name="button" Content="Go" HorizontalAlignment="Left" Margin="48,373,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Command="{Binding ClickCommand}"/>
+        
+        <ListView ItemsSource="{Binding}" x:Name="Affichage_Recherche" HorizontalAlignment="Left" Height="349" Margin="442,18,0,0" VerticalAlignment="Top" Width="395">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=AffichageRecherche}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Button x:Name="XML" Content="Save XML" HorizontalAlignment="Left" Margin="725,381,0,0" VerticalAlignment="Top" Width="75" Command="{Binding SaveXML}"/>
+        
+        <TextBox x:Name="AverageVolume"  HorizontalAlignment="Left" Height="23" Margin="25,273,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.75,3.13" TextChanged="AverageVolume_TextChanged"    />
+        
+        <TextBox x:Name="Country"   HorizontalAlignment="Left" Height="23" Margin="25,173,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.75,3.13"    />
+        
+        <TextBox x:Name="Industry"   HorizontalAlignment="Left" Height="23" Margin="25,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.75,3.13"    />
+        
+        <TextBox x:Name="Price"   HorizontalAlignment="Left" Height="23" Margin="25,323,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.75,3.13"    />
+
 
     </Grid>
 </Window>

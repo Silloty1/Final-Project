@@ -26,8 +26,8 @@ namespace Projet
         private MV_Stocks recherche = new MV_Stocks();
         public MainWindow()
         {
-            recherche = new MV_Stocks();
-            recherche.FenetreDeRecherche = this;
+            //recherche = new MV_Stocks();
+            //recherche.FenetreDeRecherche = this;
             InitializeComponent();
            
         }
@@ -41,6 +41,11 @@ namespace Projet
         {
 
         }
+
+        private void Recherche_stock()
+        {
+            
+        }
         private void Recherche_Delit()
         {
 
@@ -52,7 +57,7 @@ namespace Projet
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string date = DateBox.Text;
+            string sector = SectorBox.Text;
             string companyName = CompanyName.Text;
             string averageVolume = AverageVolume.Text;
             string country = Country.Text;
@@ -61,7 +66,7 @@ namespace Projet
             string priceChanging = comboBoxPrice.Text;
             string averageVolumeChanging = comboBoxAverageVolume.Text;
             
-            recherche.MyAction(date, companyName, averageVolume,country,industry,price,priceChanging,averageVolumeChanging);
+            recherche.MyAction(companyName,country,sector,industry,price,averageVolume);
         }
 
         

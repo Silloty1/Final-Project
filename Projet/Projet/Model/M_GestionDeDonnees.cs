@@ -44,7 +44,7 @@ namespace Projet.Model
         {
         }
 
-        public M_GestionDeDonnees(string date, string company, string country, string sector, string industry, string price, string averageVolume)
+        public M_GestionDeDonnees( string company, string country, string sector, string industry, string price, string averageVolume)
         {
             this.company = company;
             this.country = country;
@@ -56,7 +56,7 @@ namespace Projet.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void Connect_to_mongo(string date, string company, string country, string sector,string industry,string price,string average_Volume)
+        public void Connect_to_mongo( string company, string country, string sector,string industry,string price,string average_Volume)
         {
 
             var connectionString = "mongodb://localhost";

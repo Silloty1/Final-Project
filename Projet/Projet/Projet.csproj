@@ -84,6 +84,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ModelView\Mv_Recherche.cs" />
+    <Compile Include="ModelView\MV_Stocks.cs" />
     <Compile Include="Model\M_Stocks.cs" />
     <Compile Include="View\View_Recherche.xaml.cs">
       <DependentUpon>View_Recherche.xaml</DependentUpon>

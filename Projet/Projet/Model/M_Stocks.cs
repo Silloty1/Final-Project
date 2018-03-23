@@ -10,13 +10,13 @@ namespace Projet.Model
     {
         //Attributs
 
-        string date;
+        
         string company;
         string country;
         string sector;
         string industry;
-        double price;
-        double average_Volume;
+        string price;
+        string average_Volume;
 
         //Properties
         public string Date { get; set; }
@@ -28,9 +28,9 @@ namespace Projet.Model
         public double Average_Volume { get; set; }
 
         //Constructor
-        public M_Stocks(string date, string company, string country, string sector, string industry, double price, double average_Volume)
+        public M_Stocks( string company, string country, string sector, string industry, string price, string average_Volume)
         {
-            this.date = date;
+            
             this.company = company;
             this.country = country;
             this.sector = sector;
@@ -45,7 +45,7 @@ namespace Projet.Model
         {
             get
             {
-                return "Company Name: " + company + " Country: " + country + " Date : " + date + " Sector : " + sector + " Industry : " + industry + " Price : " + price + " Average Volume : " + average_Volume;
+                return "Company Name: " + company + " Country: " + country + " Sector : " + sector + " Industry : " + industry + " Price : " + price + " Average Volume : " + average_Volume;
             }
         }
 

@@ -23,8 +23,11 @@ namespace Projet.Model
 
         #region Attributs
         List<M_Crime> listcrime = new List<M_Crime>();
+        List<M_Stocks> listStocks = new List<M_Stocks>();
         string requete = "SELECT * FROM Crime";
         public List<M_Crime> ListCrime { get { return listcrime; } }
+        public List<M_Stocks> ListStocks { get { return listStocks; } }
+    
 
         //Mv_Recherche obj = new Mv_Recherche();
         private string date; 
@@ -63,7 +66,7 @@ namespace Projet.Model
             var client = new MongoClient(connectionString);
             var server = client.GetServer();
             var database = server.GetDatabase("stocks");
-            server.Ping();
+            
             MongoCollection<M_Stocks> collection = database.GetCollection<M_Stocks>("Stocks");
 
             var query = Query<M_Stocks>.EQ(u => u.Company, "Agilent Technologies Inc.");

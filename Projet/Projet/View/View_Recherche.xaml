@@ -31,7 +31,7 @@
 
         <Button x:Name="button" Content="Go" HorizontalAlignment="Left" Margin="48,373,0,0" VerticalAlignment="Top" Width="75"  Command="{Binding ClickCommand}"/>
 
-        <ListView ItemsSource="{Binding}" x:Name="Affichage_Recherche" HorizontalAlignment="Left" Height="349" Margin="442,18,0,0" VerticalAlignment="Top" Width="395">
+        <ListView ItemsSource="{Binding}"  HorizontalAlignment="Left" Height="349" Margin="442,18,0,0" VerticalAlignment="Top" Width="395">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -43,7 +43,7 @@
 
         <Button x:Name="XML" Content="Save XML" HorizontalAlignment="Left" Margin="725,381,0,0" VerticalAlignment="Top" Width="75" Command="{Binding SaveXML}"/>
 
-        <TextBox x:Name="AverageVolume" HorizontalAlignment="Left" Height="23" Margin="25,273,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.75,3.13" TextChanged="AverageVolume_TextChanged"    />
+        <TextBox x:Name="AverageVolume" HorizontalAlignment="Left" Height="23" Margin="25,273,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.75,3.13"     />
 
         <TextBox x:Name="Country"   HorizontalAlignment="Left" Height="23" Margin="25,173,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.75,3.13"    />
 

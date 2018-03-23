@@ -16,7 +16,7 @@ namespace Projet.ModelView
     class MV_Stocks
     {
         View_Recherche view;
-        
+        MainWindow MainView;
         
         string companyName;
         string averageVolume;
@@ -48,7 +48,11 @@ namespace Projet.ModelView
         }
         #endregion
 
-        public List<M_Crime> List { get { return obj.ListCrime; } }
+        //public List<M_Crime> List { get { return obj.ListCrime; } }
+
+            public List<M_Stocks> List { get { return obj.ListStocks; } }
+
+
 
 
         private ICommand _clickCommand;
@@ -70,6 +74,18 @@ namespace Projet.ModelView
             }
         }
 
+        public MainWindow MainWindow
+        {
+            get
+            {
+                return MainView;
+            }
+            set
+            {
+                MainView = value;
+            }
+        }
+
         public ICommand ClickCommand
         {
             get
@@ -83,7 +99,7 @@ namespace Projet.ModelView
 
             obj = new M_GestionDeDonnees(companyName,country, sector, industry, price, averageVolume);
             obj.Connect_to_mongo(companyName,country,sector,industry,price,averageVolume);
-            view.Affichage_Recherche.DataContext = List;
+            MainView.Affichage_Recherche.DataContext = List;
 
         }
 

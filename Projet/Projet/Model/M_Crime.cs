@@ -39,14 +39,14 @@ namespace Projet.Model
             this.coor_Y = coor_Y;
         }
 
-        public String AffichageRecherche
+        /*public String AffichageRecherche
         {
             get
             {
                 return "Id: " + id + " Lieu: " + borough + " Date : " + date;
             }
         }
-
+        */
         
 
     }
